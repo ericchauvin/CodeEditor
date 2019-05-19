@@ -32,7 +32,7 @@ namespace CodeEditor2
   // public partial class MainForm : Form
   public class MainForm : Form
   {
-  internal const string VersionDate = "5/15/2019";
+  internal const string VersionDate = "5/19/2019";
   internal const int VersionNumber = 20; // 2.0
   private System.Threading.Mutex SingleInstanceMutex = null;
   private bool IsSingleInstance = false;
@@ -49,7 +49,7 @@ namespace CodeEditor2
   private string ShowProjectText = "";
   private string SearchText = "";
   private Process ProgProcess;
-  private float MainTextFontSize = 34.0F;
+  private float MainTextFontSize = 35.0F;
 
   // System.Windows.Forms.
   private MenuStrip menuStrip1;
@@ -98,8 +98,11 @@ namespace CodeEditor2
     // InitializeComponent();
     InitializeGuiComponents();
 
-    // this.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-    this.Font = new System.Drawing.Font( "Consolas", 28.0F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+    // See MainTextFontSize above for the text boxes.
+
+    // The tabs at the top are this size.
+    this.Font = new System.Drawing.Font( "Consolas", 30.0F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+
     this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
 
     if( !CheckSingleInstance())
@@ -1731,6 +1734,9 @@ namespace CodeEditor2
 
   }
 }
+
+
+
 
 
 
