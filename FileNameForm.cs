@@ -1,4 +1,4 @@
-// Copyright Eric Chauvin 2017 - 2019.
+// Copyright Eric Chauvin 2019.
 
 
 using System;
@@ -182,6 +182,7 @@ namespace CodeEditor2
 
   }
 }
+
 
 
 
