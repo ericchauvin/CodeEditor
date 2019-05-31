@@ -1,4 +1,4 @@
-// Copyright Eric Chauvin 2018 - 2019.
+// Copyright Eric Chauvin 2019.
 
 
 
@@ -32,7 +32,7 @@ namespace CodeEditor2
   // public partial class MainForm : Form
   public class MainForm : Form
   {
-  internal const string VersionDate = "5/19/2019";
+  internal const string VersionDate = "5/31/2019";
   internal const int VersionNumber = 20; // 2.0
   private System.Threading.Mutex SingleInstanceMutex = null;
   private bool IsSingleInstance = false;
@@ -81,7 +81,7 @@ namespace CodeEditor2
   private ToolStripMenuItem findToolStripMenuItem;
   private ToolStripMenuItem findNextToolStripMenuItem;
   private ToolStripMenuItem closeCurrentToolStripMenuItem;
-  private ToolStripMenuItem removeEmptyLinesToolStripMenuItem;
+  // private ToolStripMenuItem removeEmptyLinesToolStripMenuItem;
   private ToolStripMenuItem debugToolStripMenuItem;
   private ToolStripMenuItem runWithoutDebuggingToolStripMenuItem;
   private ToolStripMenuItem showLogToolStripMenuItem;
@@ -481,7 +481,7 @@ namespace CodeEditor2
     findToolStripMenuItem.Dispose();
     findNextToolStripMenuItem.Dispose();
     closeCurrentToolStripMenuItem.Dispose();
-    removeEmptyLinesToolStripMenuItem.Dispose();
+    // removeEmptyLinesToolStripMenuItem.Dispose();
     debugToolStripMenuItem.Dispose();
     runWithoutDebuggingToolStripMenuItem.Dispose();
     showLogToolStripMenuItem.Dispose();
@@ -1273,7 +1273,7 @@ namespace CodeEditor2
     }
 
 
-
+/*
   private void removeEmptyLinesToolStripMenuItem_Click(object sender, EventArgs e)
     {
     int SelectedIndex = MainTabControl.SelectedIndex;
@@ -1294,6 +1294,7 @@ namespace CodeEditor2
 
     TabPagesArray[SelectedIndex].RemoveEmptyLines();
     }
+*/
 
 
 
@@ -1431,7 +1432,7 @@ namespace CodeEditor2
     selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
     findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
     findNextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-    removeEmptyLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+    // removeEmptyLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
     debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
     runWithoutDebuggingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
     projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1541,8 +1542,8 @@ namespace CodeEditor2
             cutToolStripMenuItem,
             selectAllToolStripMenuItem,
             findToolStripMenuItem,
-            findNextToolStripMenuItem,
-            removeEmptyLinesToolStripMenuItem});
+            findNextToolStripMenuItem } ); // ,
+            // removeEmptyLinesToolStripMenuItem});
       editToolStripMenuItem.Name = "editToolStripMenuItem";
       editToolStripMenuItem.Size = new System.Drawing.Size(87, 49);
       editToolStripMenuItem.Text = "&Edit";
@@ -1572,10 +1573,10 @@ namespace CodeEditor2
       findNextToolStripMenuItem.Text = "Find &Next";
       findNextToolStripMenuItem.Click += new System.EventHandler(this.findNextToolStripMenuItem_Click);
 
-      removeEmptyLinesToolStripMenuItem.Name = "removeEmptyLinesToolStripMenuItem";
-      removeEmptyLinesToolStripMenuItem.Size = new System.Drawing.Size(405, 50);
-      removeEmptyLinesToolStripMenuItem.Text = "Remove &Empty Lines";
-      removeEmptyLinesToolStripMenuItem.Click += new System.EventHandler(this.removeEmptyLinesToolStripMenuItem_Click);
+      // removeEmptyLinesToolStripMenuItem.Name = "removeEmptyLinesToolStripMenuItem";
+      // removeEmptyLinesToolStripMenuItem.Size = new System.Drawing.Size(405, 50);
+      // removeEmptyLinesToolStripMenuItem.Text = "Remove &Empty Lines";
+      // removeEmptyLinesToolStripMenuItem.Click += new System.EventHandler(this.removeEmptyLinesToolStripMenuItem_Click);
 
       debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.runWithoutDebuggingToolStripMenuItem});
@@ -1734,6 +1735,10 @@ namespace CodeEditor2
 
   }
 }
+
+
+
+
 
 
 
