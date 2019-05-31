@@ -1,4 +1,4 @@
-// Copyright Eric Chauvin 2018.
+// Copyright Eric Chauvin 2019.
 
 
 
@@ -143,7 +143,7 @@ namespace CodeEditor2
       SBuilder.Append( OneChar );
       }
 
-    MainTextBox.Text = FileSBuilder.ToString().TrimEnd();
+    MainTextBox.Text = FileSBuilder.ToString().TrimEnd() + "\r\n";
     return true;
     }
     catch( Exception Except )
@@ -240,6 +240,7 @@ namespace CodeEditor2
 
 
 
+/*
   internal void RemoveEmptyLines()
     {
     try
@@ -265,11 +266,15 @@ namespace CodeEditor2
       MForm.ShowStatus( Except.Message );
       }
     }
-
+*/
 
 
   }
 }
+
+
+
+
 
 
 
