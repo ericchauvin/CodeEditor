@@ -32,7 +32,7 @@ namespace CodeEditor2
   // public partial class MainForm : Form
   public class MainForm : Form
   {
-  internal const string VersionDate = "5/31/2019";
+  internal const string VersionDate = "6/10/2019";
   internal const int VersionNumber = 20; // 2.0
   private System.Threading.Mutex SingleInstanceMutex = null;
   private bool IsSingleInstance = false;
@@ -81,7 +81,6 @@ namespace CodeEditor2
   private ToolStripMenuItem findToolStripMenuItem;
   private ToolStripMenuItem findNextToolStripMenuItem;
   private ToolStripMenuItem closeCurrentToolStripMenuItem;
-  // private ToolStripMenuItem removeEmptyLinesToolStripMenuItem;
   private ToolStripMenuItem debugToolStripMenuItem;
   private ToolStripMenuItem runWithoutDebuggingToolStripMenuItem;
   private ToolStripMenuItem showLogToolStripMenuItem;
@@ -481,7 +480,6 @@ namespace CodeEditor2
     findToolStripMenuItem.Dispose();
     findNextToolStripMenuItem.Dispose();
     closeCurrentToolStripMenuItem.Dispose();
-    // removeEmptyLinesToolStripMenuItem.Dispose();
     debugToolStripMenuItem.Dispose();
     runWithoutDebuggingToolStripMenuItem.Dispose();
     showLogToolStripMenuItem.Dispose();
@@ -1735,6 +1733,8 @@ namespace CodeEditor2
 
   }
 }
+
+
 
 
 
