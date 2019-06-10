@@ -96,6 +96,13 @@ namespace CodeEditor2
     {
     try
     {
+    if( FileName.ToLower() == "noname.txt" )
+      {
+      MainTextBox.Text = "";
+      return true;
+      }
+
+
     if( !File.Exists( FileName ))
       {
       // Might be adding a new file that doesn't
@@ -205,6 +212,9 @@ namespace CodeEditor2
     {
     try
     {
+    if( FileName.ToLower() == "noname.txt" )
+      return true;
+
     MForm.ShowStatus( "Saving: " + FileName );
 
     // if( FileName.ToLower().EndsWith( ".bat" ) ||
@@ -271,6 +281,8 @@ namespace CodeEditor2
 
   }
 }
+
+
 
 
 
