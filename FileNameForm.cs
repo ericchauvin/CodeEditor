@@ -22,6 +22,7 @@ namespace CodeEditor2
   private string FileNameText = "";
   private System.Windows.Forms.ComboBox FileNameComboBox;
   private System.Windows.Forms.Label FileNameLabel;
+  private string FileExtension = "*.*";
 
 
 
@@ -33,8 +34,9 @@ namespace CodeEditor2
 
 
 
-  public FileNameForm( string StartDir )
+  public FileNameForm( string StartDir, string FileExt )
     {
+    FileExtension = FileExt;
     StartDirectory = StartDir;
     InitializeGuiComponents();
 
@@ -51,7 +53,7 @@ namespace CodeEditor2
     FileNameComboBox.Items.Clear();
     FileNameComboBox.Items.Add( "A> C:\\Eric" );
 
-    string[] FileEntries = Directory.GetFiles( DirName, "*.*" );
+    string[] FileEntries = Directory.GetFiles( DirName, FileExtension );
     foreach( string FileName in FileEntries )
       {
       // if( !MForm.CheckEvents())
@@ -182,6 +184,10 @@ namespace CodeEditor2
 
   }
 }
+
+
+
+
 
 
 
