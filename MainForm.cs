@@ -32,7 +32,7 @@ namespace CodeEditor2
   // public partial class MainForm : Form
   public class MainForm : Form
   {
-  internal const string VersionDate = "6/10/2019";
+  internal const string VersionDate = "6/14/2019";
   internal const int VersionNumber = 20; // 2.0
   private System.Threading.Mutex SingleInstanceMutex = null;
   private bool IsSingleInstance = false;
@@ -697,13 +697,13 @@ namespace CodeEditor2
 
 
 
-  internal string OpenFileNameDialog( string StartDir )
+  internal string OpenFileNameDialog( string StartDir, string FileExt )
     {
     string FileNameText = "None";
 
     try
     {
-    FileNameForm FNameForm = new FileNameForm( StartDir );
+    FileNameForm FNameForm = new FileNameForm( StartDir, FileExt );
     FNameForm.ShowDialog();
     if( FNameForm.DialogResult == DialogResult.Cancel )
       {
@@ -747,7 +747,7 @@ namespace CodeEditor2
     {
     // Get this starting directory name from a confifiguration
     // file or something.
-    FileToOpen = OpenFileNameDialog( "C:\\Eric" );
+    FileToOpen = OpenFileNameDialog( "C:\\Eric", "*.*" );
     if( FileToOpen.Length < 1 )
       return;
 
@@ -855,6 +855,7 @@ namespace CodeEditor2
     }
 
 
+
 /*
   private void CloseAllFiles()
     {
@@ -960,7 +961,7 @@ namespace CodeEditor2
 
     // Get this starting directory name from a confifiguration
     // file or something.
-    FileNameText = OpenFileNameDialog( "C:\\Eric" );
+    FileNameText = OpenFileNameDialog( "C:\\Eric", "*.*" );
     if( FileNameText.Length < 1 )
       return;
 
@@ -1034,9 +1035,15 @@ namespace CodeEditor2
     {
     // Get this starting directory name from a confifiguration
     // file or something.
-    FileToOpen = OpenFileNameDialog( "C:\\Eric" );
+    FileToOpen = OpenFileNameDialog( "C:\\Eric", "*.txt" );
     if( FileToOpen.Length < 1 )
       return;
+
+    if( !FileToOpen.ToLower().Contains( ".txt" ))
+      {
+      MessageBox.Show( "This should be a .txt file: " + FileToOpen, MessageBoxTitle, MessageBoxButtons.OK );
+      return;
+      }
 
     // MessageBox.Show( "File to open: " + FileToOpen, MessageBoxTitle, MessageBoxButtons.OK );
 
@@ -1060,12 +1067,11 @@ namespace CodeEditor2
 
     MainConfigFile.SetString( "CurrentProjectFile", ProjectFileName, true );
 
-    // Just make a new one instead of the old one.
     ProjectConfigFile = new ConfigureFile( ProjectFileName, this );
 
     string WorkingDir = ProjectFileName;
     WorkingDir = Path.GetDirectoryName( WorkingDir );
-    ProjectConfigFile.SetString( "ProjectDirectory", WorkingDir, true );
+   ProjectConfigFile.SetString( "ProjectDirectory", WorkingDir, false );
 
     OpenRecentFiles();
 
@@ -1361,7 +1367,7 @@ namespace CodeEditor2
     {
     // Get this starting directory name from a confifiguration
     // file or something.
-    FileToOpen = OpenFileNameDialog( "C:\\Eric" );
+    FileToOpen = OpenFileNameDialog( "C:\\Eric", "*.*" );
     if( FileToOpen.Length < 1 )
       return;
 
@@ -1733,38 +1739,5 @@ namespace CodeEditor2
 
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
