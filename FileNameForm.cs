@@ -78,7 +78,7 @@ namespace CodeEditor2
     }
     catch( Exception Except )
       {
-      string ShowS = "Exception getting file names.\r\n" +
+      string ShowS = "Searching the directory. Is this a file name? Exception getting file names.\r\n" +
                      DirName + "\r\n" +
                      Except.Message;
 
@@ -184,15 +184,6 @@ namespace CodeEditor2
 
   }
 }
-
-
-
-
-
-
-
-
-
 
 
 
