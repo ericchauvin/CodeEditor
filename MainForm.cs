@@ -32,7 +32,7 @@ namespace CodeEditor2
   // public partial class MainForm : Form
   public class MainForm : Form
   {
-  internal const string VersionDate = "6/14/2019";
+  internal const string VersionDate = "6/18/2019";
   internal const int VersionNumber = 20; // 2.0
   private System.Threading.Mutex SingleInstanceMutex = null;
   private bool IsSingleInstance = false;
@@ -715,7 +715,11 @@ namespace CodeEditor2
     FileNameText = FNameForm.GetFileNameText().Trim();
     FNameForm.FreeEverything();
 
-    // MessageBox.Show( "Name entered: " + FileNameText, MessageBoxTitle, MessageBoxButtons.OK );
+    if( FileNameText.StartsWith( "A> " ))
+      {
+      MessageBox.Show( "Filename starts with A> : " + FileNameText, MessageBoxTitle, MessageBoxButtons.OK );
+      return "";
+      }
 
     if( FileNameText.Length < 1 )
       {
@@ -1739,5 +1743,8 @@ namespace CodeEditor2
 
   }
 }
+
+
+
 
 
