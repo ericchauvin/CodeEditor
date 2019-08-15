@@ -6,8 +6,8 @@
 // Code Editor version 2.
 
 
-// Microsoft Visual Studio has gotten too _helpful_,
-// with the Clippy character lightbulb and all the
+// Microsoft Visual Studio got too _helpful_ for me,
+// with the Clippy character blinking lightbulb and all the
 // other stuff flashing on the screen.  So I wanted
 // to have a basic code editor without all of the
 // distractions.
@@ -32,8 +32,8 @@ namespace CodeEditor2
   // public partial class MainForm : Form
   public class MainForm : Form
   {
-  internal const string VersionDate = "6/18/2019";
-  internal const int VersionNumber = 20; // 2.0
+  internal const string VersionDate = "8/15/2019";
+  // private int VersionNumber = 20; // 2.0
   private System.Threading.Mutex SingleInstanceMutex = null;
   private bool IsSingleInstance = false;
   private bool IsClosing = false;
@@ -49,7 +49,7 @@ namespace CodeEditor2
   private string ShowProjectText = "";
   private string SearchText = "";
   private Process ProgProcess;
-  private float MainTextFontSize = 35.0F;
+  private float MainTextFontSize = 38.0F;
 
   // System.Windows.Forms.
   private MenuStrip menuStrip1;
@@ -1743,6 +1743,8 @@ namespace CodeEditor2
 
   }
 }
+
+
 
 
 
